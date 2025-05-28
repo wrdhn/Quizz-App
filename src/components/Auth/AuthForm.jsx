@@ -76,7 +76,7 @@ function AuthForm({
             </Button>
           </Form>
 
-          <div className='d-flex justify-content-center gap-1 pt-5'>
+          <div className='d-flex justify-content-center gap-1 pt-4'>
             {footerText}
             <a
               className='link-primary text-decoration-none'
