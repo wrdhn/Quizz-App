@@ -16,7 +16,6 @@ function ProtectedRoute() {
     )
   }
 
-  // redirect to login if not authenticated
   return isAuthenticated ? <Outlet /> : <Navigate to='/login' replace />
 }
 

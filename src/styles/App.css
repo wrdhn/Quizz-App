@@ -14,6 +14,14 @@ body {
   border-color: var(--primary-green);
 }
 
+.login-btn {
+  padding-block: 1rem;
+}
+
+.config-btn {
+  padding-block: 1rem;
+}
+
 .green-btn:hover {
   background-color: var(--dark-green);
   border-color: var(--dark-green);
@@ -21,6 +29,11 @@ body {
 
 .icon {
   font-family: 'Ancizar Sans';
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+.text-green {
   font-weight: 600;
   color: var(--primary-green);
 }
@@ -48,5 +61,100 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Additional styles for quiz components */
+.max-width-800 {
+  max-width: 800px;
+}
+
+.max-width-1000 {
+  max-width: 1000px;
+}
+
+.btn-outline {
+  border: 2px solid #f8f9fa;
+  color: black;
+  transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Custom button hover effects */
+  .btn-outline:hover {
+    background-color: var(--primary-green);
+    box-shadow: 0 2px 4px #34ce58be;
+    color: white;
+  }
+}
+
+.btn-outline:active {
+  background-color: var(--primary-green);
+  box-shadow: 0 2px 4px #34ce58be;
+  color: white;
+}
+
+/* Answer button specific styling */
+.btn.w-100.text-start {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn.w-100.text-start:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bar styling */
+.progress {
+  border-radius: 10px;
+}
+
+.progress-bar {
+  border-radius: 10px;
+}
+
+/* Table responsive improvements */
+.table td {
+  vertical-align: middle;
+}
+
+.table .small {
+  line-height: 1.4;
+}
+
+/* Badge improvements */
+.badge {
+  font-size: 0.75em;
+}
+
+/* Card shadow improvements */
+.shadow {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* Loading states */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Tambahkan di CSS file */
+@media (max-width: 767.98px) {
+  .form-select-lg {
+    font-size: 1rem;
+    padding: 0.375rem 0.75rem;
+  }
+  .form-control-lg {
+    font-size: 1rem;
+    padding: 0.375rem 0.75rem;
+  }
+  .login-btn {
+    padding-block: 0.5rem;
+  }
+  .config-btn {
+    padding-block: 0.5rem;
   }
 }

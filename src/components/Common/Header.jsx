@@ -22,7 +22,12 @@ function Header() {
         <Navbar.Brand className='fs-3 icon'>Quizz</Navbar.Brand>
 
         {isAuthenticated && (
-          <Button size='sm' onClick={handleLogout} className='green-btn'>
+          <Button
+            variant='success'
+            size='sm'
+            onClick={handleLogout}
+            className='green-btn'
+          >
             <i className='bi bi-box-arrow-right me-2'></i>
             Logout
           </Button>

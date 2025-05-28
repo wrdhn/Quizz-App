@@ -7,6 +7,7 @@ export const authService = {
         username,
         password,
       })
+      console.info('Login success')
       return {
         success: true,
         data: response.data,
@@ -31,17 +32,16 @@ export const authService = {
               user: {
                 id: 1,
                 username: 'admin',
-                email: 'admin@example.com',
               },
             },
           })
         } else {
           resolve({
             success: false,
-            error: 'Username atau password salah',
+            error: 'Username atau    salah',
           })
         }
-      }, 1000) // Simulasi network delay
+      }, 1000)
     })
   },
 }

@@ -54,14 +54,13 @@ export function AuthProvider({ children }) {
       }
     } catch (error) {
       console.error('Login error:', error)
-      return { success: false, error: 'Terjadi kesalahan sistem' }
+      return { success: false, error: 'System error occurred' }
     }
   }
 
   const logout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    localStorage.removeItem('quiz_progress')
     setUser(null)
     setIsAuthenticated(false)
   }

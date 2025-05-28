@@ -33,9 +33,8 @@ function Login() {
     setError('')
     setLoading(true)
 
-    // basic validation
     if (!formData.username || !formData.password) {
-      setError('Username dan password harus diisi')
+      setError('Username and password is required')
       setLoading(false)
       return
     }
@@ -45,7 +44,7 @@ function Login() {
     if (result.success) {
       navigate('/', { replace: true })
     } else {
-      setError(result.error || 'Login gagal')
+      setError(result.error || 'Login failed')
     }
 
     setLoading(false)
@@ -59,38 +58,51 @@ function Login() {
       <Card style={{ width: '400px' }} className='shadow'>
         <Card.Body className='p-4'>
           <div className='text-center mb-4'>
-            <h2 className='icon fs-2'>Quizz</h2>
-            <p className='text-muted'>Silakan login untuk melanjutkan</p>
+            <div className='icon fs-1'>Quizz</div>
+            <p className='text-muted'>Please log in to continue</p>
           </div>
 
           {error && <Alert variant='danger'>{error}</Alert>}
 
           <Form onSubmit={handleSubmit}>
             <Form.Group className='mb-3'>
-              <Form.Label>Username</Form.Label>
+              <Form.Label className=' ms-2'>
+                <i className='bi bi-person me-2'></i>
+                Username
+              </Form.Label>
               <Form.Control
                 type='text'
                 name='username'
+                className='form-select-lg'
                 value={formData.username}
                 onChange={handleChange}
-                placeholder='Masukkan username'
+                placeholder='Enter username'
                 disabled={loading}
               />
             </Form.Group>
 
             <Form.Group className='mb-4'>
-              <Form.Label>Password</Form.Label>
+              <Form.Label className='ms-2'>
+                <i className='bi bi-lock me-2'></i>
+                Password
+              </Form.Label>
               <Form.Control
                 type='password'
                 name='password'
+                className='form-control-lg'
                 value={formData.password}
                 onChange={handleChange}
-                placeholder='Masukkan password'
+                placeholder='Enter password'
                 disabled={loading}
               />
             </Form.Group>
 
-            <Button type='submit' className='w-100' disabled={loading}>
+            <Button
+              variant='success'
+              type='submit'
+              className='login-btn green-btn w-100'
+              disabled={loading}
+            >
               {loading ? (
                 <>
                   <Spinner animation='border' size='sm' className='me-2' />
