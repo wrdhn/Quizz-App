@@ -14,7 +14,7 @@ body {
   border-color: var(--primary-green);
 }
 
-.login-btn {
+.auth-btn {
   padding-block: 1rem;
 }
 
@@ -83,7 +83,6 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  /* Custom button hover effects */
   .btn-outline:hover {
     background-color: var(--primary-green);
     box-shadow: 0 2px 4px #34ce58be;
@@ -125,23 +124,20 @@ body {
   line-height: 1.4;
 }
 
-/* Badge improvements */
 .badge {
   font-size: 0.75em;
 }
 
-/* Card shadow improvements */
+/* Card shadow */
 .shadow {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-/* Loading states */
 .btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Tambahkan di CSS file */
 @media (max-width: 767.98px) {
   .form-select-lg {
     font-size: 1rem;
@@ -151,7 +147,7 @@ body {
     font-size: 1rem;
     padding: 0.375rem 0.75rem;
   }
-  .login-btn {
+  .auth-btn {
     padding-block: 0.5rem;
   }
   .config-btn {

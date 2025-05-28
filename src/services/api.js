@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-// Base configuration
-const API_BASE_URL = 'http://localhost:3000/api' // Ganti sesuai API Anda nanti
+const API_BASE_URL = 'http://localhost:3000'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -11,7 +10,6 @@ const api = axios.create({
   },
 })
 
-// Request interceptor - untuk menambahkan token ke setiap request
 api.interceptors.request.use(
   config => {
     const token = localStorage.getItem('token')
@@ -25,13 +23,11 @@ api.interceptors.request.use(
   }
 )
 
-// Response interceptor - untuk handle error global
 api.interceptors.response.use(
   response => {
     return response
   },
   error => {
-    // Jika token expired atau unauthorized
     if (error.response?.status === 401) {
       localStorage.removeItem('token')
       localStorage.removeItem('user')

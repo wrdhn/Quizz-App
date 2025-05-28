@@ -3,7 +3,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import AuthForm from './AuthForm'
 
-function Login() {
+function Register() {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -11,7 +11,7 @@ function Login() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const { login, isAuthenticated } = useAuth()
+  const { register, isAuthenticated } = useAuth()
   const navigate = useNavigate()
 
   // redirect if user is already logged in
@@ -39,12 +39,12 @@ function Login() {
       return
     }
 
-    const result = await login(formData.username, formData.password)
+    const result = await register(formData.username, formData.password)
 
     if (result.success) {
       navigate('/', { replace: true })
     } else {
-      setError(result.error || 'Login failed')
+      setError(result.error || 'Register failed')
     }
 
     setLoading(false)
@@ -52,18 +52,18 @@ function Login() {
 
   return (
     <AuthForm
-      subtitle='Please log in to continue'
+      subtitle='Please register to continue'
       formData={formData}
       onChange={handleChange}
       onSubmit={handleSubmit}
       loading={loading}
       error={error}
-      submitLabel='Login'
-      footerText='New here?'
-      footerActionLabel='Register'
-      onFooterAction={() => navigate('/register')}
+      submitLabel='Register'
+      footerText='Already have an account??'
+      footerActionLabel='Login'
+      onFooterAction={() => navigate('/login')}
     />
   )
 }
 
-export default Login
+export default Register

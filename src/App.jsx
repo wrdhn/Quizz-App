@@ -4,6 +4,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import { QuizProvider } from './contexts/QuizContext'
 import Header from './components/Common/Header'
 import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
 import QuizConfig from './components/Quiz/QuizConfig'
 import QuizQuestion from './components/Quiz/QuizQuestion'
 import QuizResult from './components/Quiz/QuizResult'
@@ -20,7 +21,7 @@ function App() {
               <Routes>
                 {/* Public Route */}
                 <Route path='/login' element={<Login />} />
-
+                <Route path='/register' element={<Register />} />
                 {/* Protected Routes */}
                 <Route path='/' element={<ProtectedRoute />}>
                   <Route index element={<QuizConfig />} />

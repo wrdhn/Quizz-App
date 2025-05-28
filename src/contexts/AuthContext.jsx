@@ -36,8 +36,7 @@ export function AuthProvider({ children }) {
 
   const login = async (username, password) => {
     try {
-      // dummyLogin for development
-      const result = await authService.dummyLogin(username, password)
+      const result = await authService.login(username, password)
 
       if (result.success) {
         const { token, user } = result.data
@@ -58,6 +57,29 @@ export function AuthProvider({ children }) {
     }
   }
 
+  const register = async (username, password) => {
+    try {
+      const result = await authService.register(username, password)
+
+      if (result.success) {
+        const { token, user } = result.data
+
+        localStorage.setItem('token', token)
+        localStorage.setItem('user', JSON.stringify(user))
+
+        setUser(user)
+        setIsAuthenticated(true)
+
+        return { success: true }
+      } else {
+        return { success: false, error: result.error }
+      }
+    } catch (error) {
+      console.error('Register error:', error)
+      return { success: false, error: 'System error occurred' }
+    }
+  }
+
   const logout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
@@ -70,6 +92,7 @@ export function AuthProvider({ children }) {
     isAuthenticated,
     loading,
     login,
+    register,
     logout,
   }
 
