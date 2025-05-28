@@ -9,7 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.green-btn {
+.btn-primary {
   background-color: var(--primary-green);
   border-color: var(--primary-green);
 }
@@ -22,7 +22,7 @@ body {
   padding-block: 1rem;
 }
 
-.green-btn:hover {
+.btn-primary:hover {
   background-color: var(--dark-green);
   border-color: var(--dark-green);
 }

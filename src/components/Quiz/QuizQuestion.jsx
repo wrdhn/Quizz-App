@@ -66,7 +66,7 @@ function QuizQuestion() {
 
     if (!showFeedback) {
       if (selectedAnswer === answer) {
-        baseClass += 'green-btn text-white'
+        baseClass += 'btn-primary text-white'
       } else {
         baseClass += ' btn-outline'
       }

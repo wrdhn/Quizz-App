@@ -26,7 +26,7 @@ function Header() {
             variant='success'
             size='sm'
             onClick={handleLogout}
-            className='green-btn'
+            className='btn-primary'
           >
             <i className='bi bi-box-arrow-right me-2'></i>
             Logout

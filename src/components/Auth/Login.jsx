@@ -100,7 +100,7 @@ function Login() {
             <Button
               variant='success'
               type='submit'
-              className='login-btn green-btn w-100'
+              className='login-btn btn-primary w-100'
               disabled={loading}
             >
               {loading ? (

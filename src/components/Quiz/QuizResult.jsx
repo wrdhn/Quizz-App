@@ -199,7 +199,7 @@ function QuizResult() {
 
       {/* action buttons */}
       <div className='text-center'>
-        <Button className='green-btn' size='lg' onClick={handleRestart}>
+        <Button className='btn-primary' size='lg' onClick={handleRestart}>
           <i className='bi bi-arrow-repeat me-2'></i>
           Retake Quiz
         </Button>

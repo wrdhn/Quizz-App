@@ -213,7 +213,7 @@ function QuizConfig() {
                 size='lg'
                 variant='success'
                 disabled={loading || startingQuiz}
-                className='config-btn green-btn'
+                className='config-btn btn-primary'
               >
                 {startingQuiz ? (
                   <>
@@ -240,7 +240,7 @@ function QuizConfig() {
         keyboard={false}
         centered
       >
-        <Modal.Header className='bg-dark text-white'>
+        <Modal.Header className='text-dark'>
           <Modal.Title>
             <i className='bi bi-arrow-clockwise me-2'></i>
             Previous Quiz Found
@@ -255,14 +255,14 @@ function QuizConfig() {
         </Modal.Body>
         <Modal.Footer className='justify-content-center'>
           <Button
-            variant='outline-dark'
+            variant='outline-success'
             onClick={handleStartNew}
             className='me-2'
           >
             <i className='bi bi-plus-circle me-1'></i>
             Start New
           </Button>
-          <Button variant='dark' onClick={handleResume}>
+          <Button className='btn-primary' onClick={handleResume}>
             <i className='bi bi-play-fill me-1'></i>
             Continue
           </Button>
