@@ -16,7 +16,7 @@ export const quizService = {
     } catch {
       return {
         success: false,
-        error: 'Gagal mengambil kategori soal',
+        error: 'Failed to take the question category',
       }
     }
   },
@@ -40,7 +40,7 @@ export const quizService = {
       const response = await quizApi.get('', { params })
 
       if (response.data.response_code !== 0) {
-        throw new Error('Gagal mengambil soal dari server')
+        throw new Error('Failed to retrieve questions from server')
       }
 
       // decode URL encoding and shuffle answers
@@ -69,7 +69,7 @@ export const quizService = {
     } catch (error) {
       return {
         success: false,
-        error: error.message || 'Gagal mengambil soal',
+        error: error.message || 'Failed to take the question',
       }
     }
   },

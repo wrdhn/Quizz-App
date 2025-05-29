@@ -227,8 +227,11 @@ export function QuizProvider({ children }) {
       state.questions.length > 0 &&
       !isLoadingProgress.current
     ) {
+      const user = userFromLocalStorage()
+
       const progress = {
         questions: state.questions,
+        user: user,
         userAnswers: state.userAnswers,
         currentQuestionIndex: state.currentQuestionIndex,
         config: state.config,
@@ -246,6 +249,12 @@ export function QuizProvider({ children }) {
     state.quizFinished,
     state.questions.length,
   ])
+
+  const userFromLocalStorage = () => {
+    const user = localStorage.getItem('user')
+    const userParsed = JSON.parse(user)
+    return userParsed
+  }
 
   const loadCategories = async () => {
     dispatch({ type: QUIZ_ACTIONS.SET_LOADING, payload: true })
@@ -316,11 +325,14 @@ export function QuizProvider({ children }) {
     }
 
     const saved = localStorage.getItem('quiz_progress')
+    const userLocalStorage = userFromLocalStorage()
     if (saved) {
       try {
         const progress = JSON.parse(saved)
-        // check if progress is not too old (max 2 hours)
-        if (Date.now() - progress.timestamp < 7200000) {
+        const { user } = progress
+        if (user !== userLocalStorage) {
+          return false
+        } else if (Date.now() - progress.timestamp < 7200000) {
           isLoadingProgress.current = true
 
           dispatch({
