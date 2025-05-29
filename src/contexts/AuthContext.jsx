@@ -37,12 +37,17 @@ export function AuthProvider({ children }) {
   const login = async (username, password) => {
     try {
       const result = await authService.login(username, password)
+      console.log('result', result)
 
       if (result.success) {
-        const { token, user } = result.data
+        const { data } = result.response
+        const { token, username } = data
+
+        console.log('token', token)
+        console.log('user', JSON.stringify(username))
 
         localStorage.setItem('token', token)
-        localStorage.setItem('user', JSON.stringify(user))
+        localStorage.setItem('user', JSON.stringify(username))
 
         setUser(user)
         setIsAuthenticated(true)
@@ -62,10 +67,14 @@ export function AuthProvider({ children }) {
       const result = await authService.register(username, password)
 
       if (result.success) {
-        const { token, user } = result.data
+        const { data } = result.response
+        const { token, username } = data
+
+        console.log('token', token)
+        console.log('user', JSON.stringify(username))
 
         localStorage.setItem('token', token)
-        localStorage.setItem('user', JSON.stringify(user))
+        localStorage.setItem('user', JSON.stringify(username))
 
         setUser(user)
         setIsAuthenticated(true)

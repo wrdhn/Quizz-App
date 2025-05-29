@@ -10,7 +10,7 @@ export const authService = {
       console.info('Login success')
       return {
         success: true,
-        data: response.data,
+        response: response.data,
       }
     } catch (error) {
       return {
@@ -28,7 +28,7 @@ export const authService = {
       console.info('Register success')
       return {
         success: true,
-        data: response.data,
+        response: response.data,
       }
     } catch (error) {
       return {
