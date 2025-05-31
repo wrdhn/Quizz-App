@@ -301,7 +301,7 @@ export function QuizProvider({ children }) {
       } else {
         dispatch({ type: QUIZ_ACTIONS.FINISH_QUIZ })
       }
-    }, 1000)
+    }, 1500)
   }
 
   const nextQuestion = () => {

@@ -5,13 +5,13 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.woff', '**/*.woff2'],
   server: {
-    host: '0.0.0.0', // penting agar bisa diakses dari jaringan luar
+    host: '0.0.0.0',
     port: 5173,
     strictPort: true,
     watch: {
       usePolling: true,
     },
     cors: true,
-    allowedHosts: ['a6a1-114-10-5-219.ngrok-free.app'], // ganti sesuai host ngrok kamu
+    allowedHosts: ['37e9-36-72-216-77.ngrok-free.app'],
   },
 })
