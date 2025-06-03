@@ -1,7 +1,9 @@
 # Quizz - React Quiz Application
+
 A modern quiz application built with React and Vite, featuring trivia questions from the OpenTDB API.
 
 ## Features
+
 - User authentication
 - Customizable quiz settings (category, difficulty, question count)
 - Real-time progress tracking
@@ -11,15 +13,18 @@ A modern quiz application built with React and Vite, featuring trivia questions 
 - Resume unfinished quizzes
 
 ## Tech Stack
+
 - React 19.1.0
 - Vite
 - OpenTDB API (no authentication required)
 
 ## Prerequisites
+
 - Node.js 16.0 or higher
 - npm 7.0 or higher
 
 ## Quick Start
+
 ```bash
 # 1. Setup database
 createdb quizz_auth
@@ -33,15 +38,16 @@ npm run dev  # runs on port 3001
 
 # 3. Setup & start frontend (new terminal)
 git clone https://github.com/wrdhn/Quizz-App.git
-cd Quizz-App  
+cd Quizz-App
 npm install
 npm run dev  # runs on port 5173
 ```
 
 ## Project Structure
+
 ```
-├── eslint.config.js  
-├── index.html 
+├── eslint.config.js
+├── index.html
 ├── package.json
 ├── package-lock.json
 ├── public

@@ -11,6 +11,10 @@ function Header() {
     navigate('/login')
   }
 
+  const handleCLick = () => {
+    navigate('/')
+  }
+
   return (
     <Navbar
       className='bg-white border-bottom shadow-sm'
@@ -19,8 +23,9 @@ function Header() {
       variant='light'
     >
       <Container>
-        <Navbar.Brand className='fs-3 icon'>Quizz</Navbar.Brand>
-
+        <Navbar.Brand className='fs-3 icon header' onClick={handleCLick}>
+          Quizz
+        </Navbar.Brand>
         {isAuthenticated && (
           <Button
             variant='success'

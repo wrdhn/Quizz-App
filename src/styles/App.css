@@ -33,6 +33,10 @@ body {
   color: var(--primary-green);
 }
 
+.header {
+  cursor: pointer;
+}
+
 .text-green {
   font-weight: 600;
   color: var(--primary-green);
