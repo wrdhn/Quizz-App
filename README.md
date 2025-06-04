@@ -34,7 +34,7 @@ git clone https://github.com/wrdhn/Quiz-Login-Api.git
 cd Quiz-Login-Api
 npm install
 # Setup .env file
-npm run start:dev  # runs on port 3001
+npm run start:dev  # runs on port 3000
 
 # 3. Setup & start frontend (new terminal)
 git clone https://github.com/wrdhn/Quizz-App.git
